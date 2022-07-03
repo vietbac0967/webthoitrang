@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <title>Chi tiet san pham</title>
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery-3.6.0.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/w3.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="img/logo/4.png" alt="logo website">
+        </div>
+        <div class="menu">
+            <li><a href="index.html">TRANG CHỦ</a></li>
+            <li><a href="danhSachSanPham.html">DANH SÁCH SẢN PHẦM</a></li>
+            <li><a href="#">BỘ SƯU TẬP</a>
+                <ul class="sub-menu">
+                    <li><a href="bosutapmuaxuan.html">MÙA XUÂN 2022</a></li>
+                    <li><a href="bosutammuadong.html">MÙA ĐÔNG 2021</a></li>
+                </ul>
+            </li>
+            <li><a href="tintuc.html">TIN TỨC</a></li>
+            <li><a href="gioithieu.html">VỀ CHÚNG TÔI</a></li>
+            <li><a href="sitemap.html">SITE MAP</a></li>
+        </div>
+
+        <div class="others">
+            <li><input type="text"><i class="fa fa-search" aria-hidden="true"></i></li>
+            <li>
+                <a href="signup.html" class="fa fa-paw" aria-hidden="true"></a>
+            </li>
+            <li>
+                <a href="login.html" class="fa fa-user" aria-hidden="true"></a>
+            </li>
+            <li>
+                <a href="thanhtoan.html" class="fa fa-shopping-bag" aria-hidden="true"></a>
+            </li>
+        </div>
+    </header>
+    <div class="section">
+        <div class="container " style="height: auto;">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-3 col-lg-6 " id="hinh">
+
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3 col-lg-6 ">
+                    <h4 style="font-size: 20px;" id="ten"></h4>
+                    <span class="text-secondary">Mã sản phẩm: sw2111306037706237</span>
+                    <span><a href="#">(51 nhận xét)</a></span>
+                    <div class="mt-3" style="border-bottom: 1px dashed rgb(220, 220, 220);">
+                        <h2 class="font-weight-bold" id="gia"></h2>
+                    </div>
+                    <p>Tình trạng: <span class="text-secondary">còn hàng</span></p>
+                    <div class="mt-4 " style="border-bottom: 1px dashed rgb(220, 220, 220);">
+                        <h4 style="font-size: 20px; font-weight: bold;">Màu sắc</h4>
+    
+                    </div>
+                    <div class="mt-3 ">
+                        <ul style="list-style: none; display:inline-flex;">
+                            <li>
+                                <a href="#"><img src="img/DSSP/đỏ.png" alt="" width="30px" class="rounded-circle"></a>
+                            </li>
+                            <li>
+                                <a href="#"><img src="img/DSSP/tim.png" alt="" width="30px" class="rounded-circle"></a>
+                            </li>
+                            <li>
+                                <a href="#"><img src="img/DSSP/xanhluc.png" alt="" width="30px" class="rounded-circle"></a>
+                            </li>
+                            <li>
+                                <a href="#"><img src="img/DSSP/xanhduong.png" alt="" width="30px" class="rounded-circle"></a>
+                            </li>
+                            <li>
+                                <a href="#"><img src="img/DSSP/xam1.png" alt="" width="30px" class="rounded-circle"></a>
+                            </li>
+                            <li>
+                                <a href="#"><img src="img/DSSP/vang.png" alt="" width="30px" class="rounded-circle"></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-3" style="border-bottom: 1px dashed rgb(220, 220, 220);">
+                        <h5 class="font-weight-bold">Kích thước</h5>
+                        
+                        <div>
+                            <span><button class="btn btn-outline-secondary" style="width: 60px;" id="xs">XS</button></span>
+                            <span><button class="btn btn-outline-secondary" style="width: 60px;">S</button></span>
+                            <span><button class="btn btn-outline-secondary" style="width: 60px;">M</button></span>
+                            <span><button class="btn btn-outline-secondary" style="width: 60px;">L</button></span>
+                            <span><button class="btn btn-outline-secondary" style="width: 60px;">XL</button></span>
+                        </div>
+                        <div class="mt-3">
+                            <span><a href="#">Hướng dẫn xem kích thước</a></span>
+                        </div>
+                    </div>
+                    <div class="mt-3" style="border-bottom: 1px dashed rgb(220, 220, 220);">
+                        <label for="" id="">Số lượng:</label>
+                        <div class="row ml-2">
+                            <div class="border">
+                                <button type="button" class="btn" onclick="tru()">-</button>
+                                <input class="text-center text-danger"  type="text" value="1" readonly id="so" style="height: 36px;" size="3px">
+                                <button type="button" class="btn"  onclick="cong()">+</button>
+                            </div>
+                        </div>
+                        <label for="" id="">529 sản phẩm có sẵn</label>
+
+                    </div>
+                    <div class="mt-3">
+                        <button class="btn btn-dark" style="width: 60%;" id="btnthem" onclick="addCart()">THÊM VÀO GIỎ HÀNG</button>
+                        <button class="btn btn-dark" style="width: 30%;" id="btnmua">MUA NGAY</button>
+                    </div>
+                    <div class="mt-3 ">
+                        <span><a class="text-decoration-none" href="#"><img src="img/tym.png" alt="" width="40px">Shop đảm bảo  <span class="text-secondary">3 ngày trả hàng / hoàn tiền</span></a>
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="mt-3 container-fluid ">
+            <div class="row">
+                <div class="col-10 ">
+                    <div class="badge-light">
+                        <h4>CHI TIẾT SẢN PHẨM</h4>
+                    </div>
+                    <div class="row form-group mt-5">
+                        <span class="col-2">Danh mục</span>
+                        <span class="col-5">shoppe</span>
+                    </div>
+                    <div class="row form-group">
+                        <span class="col-2">Xuất xứ</span>
+                        <span class="col-5">Việt Nam</span>
+                    </div>
+                    <div class="row form-group">
+                        <span class="col-2">Chiều dài tay áo</span>
+                        <span class="col-5">Tay ngắn</span>
+                    </div>
+                    <div class="row form-group">
+                        <span class="col-2">Kho hàng</span>
+                        <span class="col-5">529 sản phẩm có sẵn</span>
+                    </div>
+                    <div class="row form-group">
+                        <span class="col-2">Gửi từ</span>
+                        <span class="col-5">Quận Tân Bình, TP. Hồ Chí Minh</span>
+                    </div>
+                    <div class="badge-light mt-5">
+                        <h4>MÔ TẢ SẢN PHẨM</h4>
+                    </div>
+                    <div class="mt-5 ">
+                        <span>Áo sơ mi nữ kiểu tay ngắn form rộng công sở</span> <br>
+                        <span>
+                            Áo sơ mi nữ là một trang phục lịch thiệp và sang trọng bên cạnh những outfit sành điệu, sẽ có lúc nàng cần phải tìm đến sự cứu cánh của những bộ áo sơ mi nữ form suông thường
+                            được ưa chuộng bởi cô nàng cá tính, sành điệu nhờ kiểu dáng rộng rãi và thoáng mát. Với áo sơ mi kiểu nàng có thể lựa chọn cho dịp đi dạo phố, đi chơi hoặc áo sơ mi nữ công sở nhưng vẫn nữ tính hết mức bởi chất liệu lụa satin cao cấp
+                            mềm mại.
+                        </span>
+                    </div>
+                    <div class="mt-5">
+                        <h4>THÔNG TIN SẢN PHẨM</h4>
+                    </div>
+                    <div>
+                        <p>Áo sơ mi nữ kiểu tay ngắn form rộng công sở </p>
+                        <p>✔Màu sắc: Trắng, Đen, Xanh Jean, Be</p>
+                        <p>✔Chất liệu: Lụa Chéo Ý ( Không nhăn, Dày dặn, Thời trang)</p>
+                        <p>✔Size: Freesize (< 56kg), Dài áo : 65 cm, Ngực : 104cm , Eo : 96cm, Ngang Vai:41, Bắp tay : 35cm, Dài tay : 25cm</p>
+                                <p>✔Sản xuất tại Việt Nam - Cơ sở KD: Uyển Nhi Fashion - 797 Lạc Long Quân, Phường 10, Quận Tân Bình, Hồ Chí Minh</p>
+                    </div>
+                </div>
+                <div class="col-2 ">
+                    <div>
+                        <h4 class="text-secondary">Top sản phẩm bán chạy</h4>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-12">
+                            <img src="img/8.png" alt="" width="220px">
+                            <h4><a href="#" style="font-size: 15px;"> Áo hai dây Đắp vá Lá thư</a></h4>
+                            <span>389.000₫</span>
+                        </div>
+                        <div class="col-12">
+                            <img src="img/9.png" alt="" width="220px">
+                            <h4><a href="#" style="font-size: 15px;"> Áo thun nữ Lộ Lưng màu trơn </a></h4>
+                            <span>248.000₫</span>
+                        </div>
+                        <div class="col-12">
+                            <img src="img/10.png" alt="" width="220px">
+                            <h4><a href="#" style="font-size: 15px;">Đầm răng cưa Thanh lịch </a></h4>
+                            <span>200.000₫</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-3 container-fluid ">
+            <div>
+                <h4>CÁC SẢN PHẨM KHÁC CỦA SHOP</h4>
+            </div>
+            <div class="row mt-5">
+                <div class="col-2">
+                    <img src="img/1.png" alt="" width="250px">
+                    <h4><a href="#" style="font-size: 15px;"> Đầm Thắt lưng  </a></h4>
+                    <span>389.000₫</span>
+                </div>
+                <div class="col-2">
+                    <img src="img/7.png" alt="" width="250px">
+                    <h4><a href="#" style="font-size: 15px;"> Áo thun nữ Cắt ra Gân đan Cà vạt nhuộm Giải trí   </a></h4>
+                    <span>128.000₫</span>
+                </div>
+                <div class="col-2">
+                    <img src="img/3.png" alt="" width="250px">
+                    <h4><a href="#" style="font-size: 15px;"> Áo sơ mi nữ Tương phản ràng buộc màu trơn  </a></h4>
+                    <span>220.000₫.</span>
+                </div>
+                <div class="col-2">
+                    <img src="img/4.png" alt="" width="250px">
+                    <h4><a href="#" style="font-size: 15px;">Đầm Xù Họa tiết hoa Boho   </a></h4>
+                    <span>330.000₫</span>
+                </div>
+                <div class="col-2">
+                    <img src="img/5.png" alt="" width="250px">
+                    <h4><a href="#" style="font-size: 15px;"> Áo hai dây màu trơn   </a></h4>
+                    <span>184.000₫</span>
+                </div>
+                <div class="col-2">
+                    <img src="img/6.png" alt="" width="250px">
+                    <h4>
+                        <a href="#" style="font-size: 15px;"> Đầm Dây kéo Họa tiết hoa Boho  </a></h4>
+                    <span>314.000₫</span>
+                </div>
+
+            </div>
+        </div>
+        <script src="js/dssp.js"></script>
+        <script>
+            loadchitietsp();
+        </script>
+    </div>
+
+
+    <!-- ------------------------------footer----------------------- -->
+    <div class="footer">
+        <div class="row">
+            <div class="col-sm-4 pt-2">
+                <h5 class="text-left px-5">Hỗ trợ khách hàng</h5>
+                <ul class="px-5">Email: cskh@vietbac.vn
+                    <li><a href="">Gửi yêu cầu hỗ trợ, khiếu nại</a></li>
+                    <li><a href="">Hướng dẫn chọn size</a></li>
+                    <li><a href="">Chính sách khách hàng thân thiết</a></li>
+                    <li><a href=""> Chính sách bảo hành và đổi sản phẩm</a></li>
+                    <li><a href=""> Quy định về thanh toán và vận chuyển</a></li>
+                </ul>
+            </div>
+
+            <div class="col-sm-4 pt-2">
+                <h5>LIÊN HỆ</h5>
+                <p class="text-danger text-left">HOTLINE TƯ VẤN & TIẾP NHẬN KHIẾU NẠI: 18006013</p>
+                <p> (Miễn Phí, 8h - 19h30, Thứ 2 đến Thứ 7)</p>
+                <label for="" class="font-weight-bold text-left">ĐĂNG KÝ NHẬN THÔNG BÁO TỪ CỦA HÀNG</label> <br>
+                <div class="row">
+                    <input type="text" placeholder="Nhập email để nhận thêm ưu đãi" class="form-control col-8">
+                    <button type="button" class="bg-dark col-2">Gửi</button>
+                </div>
+            </div>
+
+            <div class="col-sm-4 pt-2">
+                <h5 class="font-weight-bold">VỀ CỬA HÀNG</h5>
+                <p class="m-0">Giới thiệu</p>
+                <ul class="top-0 font-weight-bold">Kết nối với chúng tôi
+                    <li><a href="#"><i class="fa fa-facebook-official" aria-hidden="true" id="face">&nbsp;Facebook</i></a></li>
+                    <li><a href="#"><i  class="fa fa-instagram" aria-hidden="true" id="youtube">&nbsp;Youtube</i></a></li>
+                    <li><a href="#"><i class="fa fa-youtube-play" aria-hidden="true" id="instar">&nbsp;Instagram</i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="foot-bottom text-center border border-dark py-2">
+            &copy; Asbad Furniture All rights reserved
+        </div>
+    </div>
+</body>
+
+</html>

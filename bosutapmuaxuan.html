@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <title>Bộ sưu tập mùa xuân 2022</title>
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery-3.6.0.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/w3.css">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        let bstxuan = JSON.parse(localStorage.getItem("bstxuan"))
+
+        function napSP(sp) {
+            let temp = "<div class='col-md-4'>" +
+                "<figure class='border text-center'>" +
+                "<img onclick=\"capnhatChitiet('" + sp.hinhanh + "','" + sp.tensp + "'," + sp.dongia + ",'" + sp.mota + "')\" src='" + sp.hinhanh + "' alt='' class='img-thumbnail vw-100' style='height: 300px;'> " +
+                "<figcaption>" + sp.tensp + "</figcaption>" +
+                "<figcaption class='font-weight-bold'>" + sp.dongia + "</figcaption>" +
+                "</figure>" +
+                "</div>"
+
+            $("#myRow").append(temp)
+        }
+
+        function capnhatChitiet(url, tensp, dongia, mota) {
+            $("#idHinhanh").attr("src", url)
+            $("#idHinhanh").attr("width", "300")
+            $("#idHinhanh").attr("hegth", "300")
+
+            $("#idDongia").html(dongia)
+            $("#idTensp").html(tensp)
+            $("#idMota").html(mota)
+
+            $("#myModal").modal()
+        }
+
+        $(document).ready(function() {
+            bstxuan.forEach(sp => {
+                napSP(sp)
+            });
+        })
+
+        $("#btnTim").click(function() {
+            let tensp = $("#txtTenSP").val(); //chuỗi
+            let regexMasp = /^\w+\s$/; //Test bài tập 8
+            if (tensp.trim() !== '' && !regexMasp.test(tensp)) {
+                $("#thongbao").html("Phải nhập số dạng ...");
+                return false;
+            }
+
+            if (tensp.trim() === '') {
+                $("#thongbao").html("");
+                $("#myRow").html("");
+                bstxuan.forEach(napSP);
+                return true;
+            }
+            // masp = parseInt(masp); //số
+            let sp = bstxuan.find(spTemp => spTemp.tensp == tensp);
+            if (sp == null) {
+                $("#thongbao").html("Không tìm thấy");
+                $("#myRow").html("");
+                return false;
+            }
+
+            $("#thongbao").html("");
+            $("#myRow").html("");
+            napSP(sp);
+            return true;
+        });
+
+       
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="img/logo/4.png" alt="logo website">
+        </div>
+        <div class="menu">
+            <li><a href="index.html">TRANG CHỦ</a></li>
+            <li><a href="danhSachSanPham.html">DANH SÁCH SẢN PHẨM</a></li>
+            <li><a href="#">BỘ SƯU TẬP</a>
+                <ul class="sub-menu">
+                    <li><a href="bosutapmuaxuan.html">MÙA XUÂN 2022</a></li>
+                    <li><a href="bosutammuadong.html">MÙA ĐÔNG 2021</a></li>
+                </ul>
+            </li>
+            <li><a href="tintuc.html">TIN TỨC</a></li>
+            <li><a href="gioithieu.html">VỀ CHÚNG TÔI</a></li>
+            <li><a href="sitemap.html">SITE MAP</a></li>
+        </div>
+
+        <div class="others">
+            <li><input type="text" id="txtTenSP"><i class="fa fa-search" aria-hidden="true" id="btnTim"></i></li>
+            <li>
+                <a href="signup.html" class="fa fa-paw" aria-hidden="true"></a>
+            </li>
+            <li>
+                <a href="login.html" class="fa fa-user" aria-hidden="true"></a>
+            </li>
+            <li>
+                <a href="thanhtoan.html" class="fa fa-shopping-bag" aria-hidden="true"></a>
+            </li>
+            <span class="text-danger font-italic" id="thongbao"></span>
+        </div>
+    </header>
+
+    <div class="section">
+        <div class="container">
+            <img src="img/bosuutap/muaxuan1.webp" alt="" width="100%">
+            <h1 class="text-center mt-10">SPRING/SUMMER 2022</h1>
+            <h1 class="text-center display-1" id="tieude">ELEVATED SIMPLICITY</h1>
+            <p class="display-5 text-secondary" id="content">Á hậu Huyền My sang trọng và thanh lịch trong những thiết kế đơn giản nhưng chất lượng từ IVY moda. Chú trọng vào phom dáng, chất liệu hơn sự cầu kỳ của trang phục, các nhà mốt đã cho thấy đỉnh cao của nghệ thuật sắp xếp tinh giản thông qua
+                nhiều công đoạn gạn lọc chặt chẽ để có được một thiết kế cực đơn giản nhưng vẫn toát lên sự tinh tế.
+            </p>
+
+            <div class="container">
+                <div class="row" id="myRow">
+                    <!-- <div class="col-md-3">
+                        <figure class="border text-center">
+                            <a href="chitietsanpham.html" onclick="setMasp(1)">
+                                <img src="../img/chauhoa1.PNG" alt="" class="img-thumbnail vw-100" style="height: 300px;">
+                            </a>
+                            <figcaption>Chau hoa 1</figcaption>
+                        </figure>
+                    </div> -->
+                </div>
+            </div>
+
+            <div class="modal fade" id="myModal">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3>Thong tin chi tiet san pham</h3>
+                            <button class="close" type="button" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body">
+
+                            <figure class="border text-center">
+                                <img src="img/bosuutap/xuan1.jpg" alt="" class="img-thumbnail" style="height: 300px;" id="idHinhanh">
+                                <figcaption id="idTensp">Chau hoa 1</figcaption>
+                                Don gia: <span id="idDongia"></span> <br> Mo ta: <span id="idMota"></span> <br>
+                            </figure>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ------------------------------footer----------------------- -->
+    <div class="footer border-top-1">
+        <div class="row">
+            <div class="col-sm-4 pt-2">
+                <h5 class="text-left px-5">Hỗ trợ khách hàng</h5>
+                <ul class="px-5">Email: cskh@vietbac.vn
+                    <li><a href="">Gửi yêu cầu hỗ trợ, khiếu nại</a></li>
+                    <li><a href="">Hướng dẫn chọn size</a></li>
+                    <li><a href="">Chính sách khách hàng thân thiết</a></li>
+                    <li><a href=""> Chính sách bảo hành và đổi sản phẩm</a></li>
+                    <li><a href=""> Quy định về thanh toán và vận chuyển</a></li>
+                </ul>
+            </div>
+
+            <div class="col-sm-4 pt-2">
+                <h5>LIÊN HỆ</h5>
+                <p class="text-danger text-left">HOTLINE TƯ VẤN & TIẾP NHẬN KHIẾU NẠI: 18006013</p>
+                <p> (Miễn Phí, 8h - 19h30, Thứ 2 đến Thứ 7)</p>
+                <label for="" class="font-weight-bold text-left">ĐĂNG KÝ NHẬN THÔNG BÁO TỪ CỦA HÀNG</label> <br>
+                <div class="row">
+                    <input type="text" placeholder="Nhập email để nhận thêm ưu đãi" class="form-control col-8">
+                    <button type="button" class="bg-dark col-2">Gửi</button>
+                </div>
+            </div>
+
+            <div class="col-sm-4 pt-2">
+                <h5 class="font-weight-bold">VỀ CỬA HÀNG</h5>
+                <p class="m-0">Giới thiệu</p>
+                <ul class="top-0 font-weight-bold">Kết nối với chúng tôi
+                    <li><a href="#"><i class="fa fa-facebook-official" aria-hidden="true" id="face">&nbsp;Facebook</i></a></li>
+                    <li><a href="#"><i  class="fa fa-instagram" aria-hidden="true" id="youtube">&nbsp;Youtube</i></a></li>
+                    <li><a href="#"><i class="fa fa-youtube-play" aria-hidden="true" id="instar">&nbsp;Instagram</i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="foot-bottom text-center border border-dark py-2">
+            &copy; Asbad Furniture All rights reserved
+        </div>
+    </div>
+</body>
+
+<!-- <script>
+    const header = document.querySelector("header")
+    window.addEventListener("scroll",function(){
+        x = window.pageXOffset()
+        if(x > 0){
+            header.classList.add("sticky")
+        }else{
+            header.classList.remove("sticky")
+        }
+    })
+
+</script> -->
+
+</html>
